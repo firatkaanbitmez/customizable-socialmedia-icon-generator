@@ -2,6 +2,11 @@
 
 This project allows users to customize and download social media icons in various shapes, colors, and sizes. Users can choose from a range of social media icons, adjust their appearance, and download them individually or as a ZIP file.
 
+![Screenshot](https://raw.githubusercontent.com/firatkaanbitmez/customizable-socialmedia-icon-generator/main/ss.png)
+
+- **test**: [firatbitmez.com/social](https://firatbitmez.com/social/)
+
+
 ## Features
 
 - **Customizable Shapes**: Choose between circle and square shapes for the icons.
