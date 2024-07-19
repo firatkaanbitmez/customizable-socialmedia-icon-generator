@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Social Media Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Customizable Social Media Icons</h1>
+    </div>
+
+    <div class="container">
+        <div class="controls">
+            <label for="shape">Shape:</label>
+            <select id="shape" onchange="updateIcons()">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+            <label for="mainColor">Icon Color:</label>
+            <input type="color" id="mainColor" value="#000000" onchange="updateIcons()">
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#ffffff" onchange="updateIcons()">
+            <label for="iconSize">Icon Size (px):</label>
+            <input type="range" id="iconSize" min="16" max="256" value="64" oninput="updateSizeInput()" onchange="updateIcons()">
+            <input type="number" id="iconSizeNumber" min="16" max="256" value="64" oninput="updateSizeRange()" onchange="updateIcons()">
+        </div>
+
+
+        <p class="note"><span style="color: red; font-weight: bolder; font-size: larger;">Click</span> on any icon to download it in PNG format.</p>
+        <button class="download-button" style="margin-top: 10px; padding-top: 10px;" onclick="downloadAllSymbols()">Download All Icons as ZIP</button>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <div class="row">
+                    <!-- Tab 1 Icons -->
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="tiktok-container" onclick="downloadSymbol('tiktok-container')">
+                            <i class="fab fa-tiktok fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="tiktok-alt-container" onclick="downloadSymbol('tiktok-alt-container')">
+                            <i class="fab fa-tiktok fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="facebook-container" onclick="downloadSymbol('facebook-container')">
+                            <i class="fab fa-facebook-f fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="facebook-alt-container" onclick="downloadSymbol('facebook-alt-container')">
+                            <i class="fab fa-facebook-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="twitter-container" onclick="downloadSymbol('twitter-container')">
+                            <i class="fab fa-twitter fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="twitter-alt-container" onclick="downloadSymbol('twitter-alt-container')">
+                            <i class="fab fa-twitter-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="instagram-container" onclick="downloadSymbol('instagram-container')">
+                            <i class="fab fa-instagram fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="instagram-alt-container" onclick="downloadSymbol('instagram-alt-container')">
+                            <i class="fab fa-instagram-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="linkedin-container" onclick="downloadSymbol('linkedin-container')">
+                            <i class="fab fa-linkedin-in fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="linkedin-alt-container" onclick="downloadSymbol('linkedin-alt-container')">
+                            <i class="fab fa-linkedin fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="youtube-container" onclick="downloadSymbol('youtube-container')">
+                            <i class="fab fa-youtube fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="youtube-alt-container" onclick="downloadSymbol('youtube-alt-container')">
+                            <i class="fab fa-youtube-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="pinterest-container" onclick="downloadSymbol('pinterest-container')">
+                            <i class="fab fa-pinterest-p fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="pinterest-alt-container" onclick="downloadSymbol('pinterest-alt-container')">
+                            <i class="fab fa-pinterest-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="tumblr-container" onclick="downloadSymbol('tumblr-container')">
+                            <i class="fab fa-tumblr fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="tumblr-alt-container" onclick="downloadSymbol('tumblr-alt-container')">
+                            <i class="fab fa-tumblr-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="googleplus-container" onclick="downloadSymbol('googleplus-container')">
+                            <i class="fab fa-google-plus-g fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="googleplus-alt-container" onclick="downloadSymbol('googleplus-alt-container')">
+                            <i class="fab fa-google-plus-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="snapchat-container" onclick="downloadSymbol('snapchat-container')">
+                            <i class="fab fa-snapchat-ghost fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="snapchat-alt-container" onclick="downloadSymbol('snapchat-alt-container')">
+                            <i class="fab fa-snapchat-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="reddit-container" onclick="downloadSymbol('reddit-container')">
+                            <i class="fab fa-reddit-alien fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="reddit-alt-container" onclick="downloadSymbol('reddit-alt-container')">
+                            <i class="fab fa-reddit-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="whatsapp-container" onclick="downloadSymbol('whatsapp-container')">
+                            <i class="fab fa-whatsapp fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="whatsapp-alt-container" onclick="downloadSymbol('whatsapp-alt-container')">
+                            <i class="fab fa-whatsapp-square fa-icon"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <div class="row">
+                    <!-- Tab 2 Icons -->
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="slack-container" onclick="downloadSymbol('slack-container')">
+                            <i class="fab fa-slack fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="twitter-x-container" onclick="downloadSymbol('twitter-x-container')">
+                            <i class="fab fa-x-twitter fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="twitch-container" onclick="downloadSymbol('twitch-container')">
+                            <i class="fab fa-twitch fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="twitter-x-alt-container" onclick="downloadSymbol('twitter-x-alt-container')">
+                            <i class="fab fa-square-x-twitter fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="spotify-container" onclick="downloadSymbol('spotify-container')">
+                            <i class="fab fa-spotify fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="solidmusic-alt-container" onclick="downloadSymbol('solidmusic-container')">
+                            <i class="fa-solid fa-music fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="dribbble-container" onclick="downloadSymbol('dribbble-container')">
+                            <i class="fab fa-dribbble fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="dribbble-alt-container" onclick="downloadSymbol('dribbble-alt-container')">
+                            <i class="fab fa-dribbble-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="behance-container" onclick="downloadSymbol('behance-container')">
+                            <i class="fab fa-behance fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="behance-alt-container" onclick="downloadSymbol('behance-alt-container')">
+                            <i class="fab fa-behance-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="medium-container" onclick="downloadSymbol('medium-container')">
+                            <i class="fab fa-medium fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="link-container" onclick="downloadSymbol('link-container')">
+                            <i class="fa-solid fa-link fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="github-container" onclick="downloadSymbol('github-container')">
+                            <i class="fab fa-github fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="github-alt-container" onclick="downloadSymbol('github-alt-container')">
+                            <i class="fab fa-github-square fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="trello-container" onclick="downloadSymbol('trello-container')">
+                            <i class="fab fa-trello fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="trello-alt-container" onclick="downloadSymbol('trello-alt-container')">
+                            <i class="fab fa-trello fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="dropbox-container" onclick="downloadSymbol('dropbox-container')">
+                            <i class="fab fa-dropbox fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="dropbox-alt-container" onclick="downloadSymbol('dropbox-alt-container')">
+                            <i class="fab fa-dropbox fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="google-container" onclick="downloadSymbol('google-container')">
+                            <i class="fab fa-google fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="google-drive-container" onclick="downloadSymbol('google-drive-container')">
+                            <i class="fab fa-google-drive fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="google-play-container" onclick="downloadSymbol('google-play-container')">
+                            <i class="fab fa-google-play fa-icon"></i>
+                        </div>
+                        <div class="icon-container" id="google-pay-container" onclick="downloadSymbol('google-pay-container')">
+                            <i class="fab fa-google-pay fa-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 icon-group">
+                        <div class="icon-container" id="discord-container" onclick="downloadSymbol('discord-container')">
+                            <i class="fab fa-discord fa-icon"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
